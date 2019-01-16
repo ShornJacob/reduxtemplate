@@ -1,7 +1,5 @@
 import React from 'react'
 import { Alert } from 'reactstrap';
-import { Badge } from 'reactstrap';
-
 
 const Header = () => (
     <div>
