@@ -1,15 +1,25 @@
-Notes
-
-//Index renders <App /> on root Element
-ReactDOM.render(<App />, document.getElementById('root'));
+//Displaying store variable in a component
 
 
-App is a JSX element
-const App = () =>    <div><Header /></div>
+1. Store is created from reducer
 
-/components/Header is a also pure JSX
-<div>
-       <Alert color="primary">
-        Heading Alert
-      </Alert>
-</div>
+//store.js
+const store = createStore(taskReducer)
+
+/reducer/taskReducer
+//taskReducer is called with in initialState
+//no action in this example
+
+const taskReducer = (state = initialState,action) => {
+  switch(action.type) {
+  
+}
+
+2: Props will be provided to the component from the store in mapStatetoProps
+
+/components/Tasks
+const Task = ({ task }) => (
+)
+
+
+const mapStateToProps = (state) => ({task: state[0]})
