@@ -23,3 +23,6 @@ Task is an object
 Task now has to guess what is spread by {...task} and given to it as props
 
 
+src/reducers/taskReducer.test.js
+Jest file can be added easily in an app created by create-react-app
+
