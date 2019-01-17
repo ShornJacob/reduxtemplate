@@ -23,3 +23,9 @@ const Task = ({ task }) => (
 
 
 const mapStateToProps = (state) => ({task: state[0]})
+
+
+https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+
+// You can chain any of the above with `isRequired` to make sure a warning
+// is shown if the prop isn't provided.
