@@ -1,25 +1,25 @@
-//Displaying store variable in a component
+//dispatching an action
+
+/src/components/Tasks
+Tasks has both mapStateToProps and mapDespatchToProps
+it gets tasks from mapStateToProps and addTask from mapDespatchToProps
+tasks from store is an array of objects
+
+Tasks returns an array of tasks using the map functios and a button constained inside a div
+ {tasks.map((task, index) => <Task key={index} {...task} />  )  }
+ index is optional parameter required for key to prevent the warning
+Each child in an array or iterator should have a unique "key" prop.
+
+<Task key={index} {...task} />
 
 
-1. Store is created from reducer
+/src/components/Task
 
-//store.js
-const store = createStore(taskReducer)
-
-/reducer/taskReducer
-//taskReducer is called with in initialState
-//no action in this example
-
-const taskReducer = (state = initialState,action) => {
-  switch(action.type) {
-  
+const Task = ({ userId,id,title,body }) => {
 }
 
-2: Props will be provided to the component from the store in mapStatetoProps
-
-/components/Tasks
-const Task = ({ task }) => (
-)
+Tasks in an array of object
+Task is an object
+Task now has to guess what is spread by {...task} and given to it as props
 
 
-const mapStateToProps = (state) => ({task: state[0]})
