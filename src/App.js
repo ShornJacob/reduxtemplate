@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './components/Header'
-import {Task} from './components/Task'
+import {Tasks} from './components/Tasks'
 
 //return is implicit in arrow function
 //App =  <div><Header /></div>
 //omitting arrow function will cause error. "Check the render method of `App`."
 //Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
-const App = () =>    <div><Header /><Task/></div>
+const App = () =>    <div><Header /><Tasks/></div>
 
 export default App

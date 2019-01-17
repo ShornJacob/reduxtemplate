@@ -1,5 +1,3 @@
-
-
 const initialState = [
     {
         userId : 345,
@@ -13,7 +11,16 @@ const initialState = [
 //use the ES6 default arguments syntax to return the initial state of our app
 const taskReducer = (state = initialState,action) => {
     switch(action.type) {
-       
+       case 'ADDTASK' :
+        return [
+            {
+                userId : 345,
+                id : 678,
+                title : "Rex Der",
+                body : "Cedf FGG"
+            },
+            ...state
+        ]
 
         default:
             return state
