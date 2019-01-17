@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Task from './Task'
 import { ADDTASK } from './../actions'
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 //shorter version. using implicit return
 // const Tasks = ({ tasks, addTask }) => (
@@ -29,7 +30,10 @@ const Tasks = ({ tasks, addTask }) => {
     )
 }
 
-
+Tasks.propTypes = {
+    tasks: PropTypes.array.isRequired
+  };
+   
 
 const mapStateToProps = (state) => ({ tasks: state })
 
