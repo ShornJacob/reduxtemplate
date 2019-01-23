@@ -22,6 +22,17 @@ const taskReducer = (state = initialState,action) => {
             ...state
         ]
 
+        case 'ADD_FORM_TASK' :
+        return [
+            {
+                userId : action.payload.userId,
+                id : action.payload.id,
+                title : action.payload.title,
+                body : action.payload.body
+            },
+            ...state
+        ]
+
         default:
             return state
     }
