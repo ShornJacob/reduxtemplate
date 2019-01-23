@@ -35,7 +35,7 @@ Tasks.propTypes = {
   };
    
 
-const mapStateToProps = (state) => ({ tasks: state })
+const mapStateToProps = (state) => ({ tasks: state.tasks })
 
 //arrow function
 //which returns an object literal ,so enclosed in () parenthesis
