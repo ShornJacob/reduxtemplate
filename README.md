@@ -1,27 +1,35 @@
-src/components/TaskForm.js
-A redux Form
+/src/actions/index.js
 
-src/store.js
-const rootReducer = combineReducers({
-    // ...your other reducers here
-    // you have to pass formReducer under 'form' key,
-    // for custom keys look up the docs for 'getFormState'
-    form: formReducer,
-    tasks: taskReducer
-  })
+export const ADD_FORM_TASK = (userId, id, title, body) => (
+    {
+        type: "ADD_FORM_TASK",
+        payload: {
+            userId: userId,
+            id: id,
+            title: title,
+            body: body
+        }
+    }
+)
 
-store object will now has two keys, form and tasks
+now has an action that accpet variables
 
-src/components/Tasks.js
-const mapStateToProps = (state) => ({ tasks: state.tasks })
-the tasks object in state is mapped to the component
+/src/components/TaskForm
+
+const mapDispatchToProps = (dispatch)  => (
+  { addTask: (values) => { dispatch(ADD_FORM_TASK(Number(values.userId),Number(values.id),values.title,values.body)) } }
+)
+
+TaskForm = connect(
+  null,
+  mapDispatchToProps
+)(TaskForm)
+
+//uses mapDispatchtoProps
+//first argument of connect should be null
+//https://stackoverflow.com/questions/35443167/dispatch-is-not-a-function-when-argument-to-maptodispatchtoprops-in-redux
 
 
-src/components/TaskForm.js
-A redux-form
-
-const renderInput = ({input,meta,label,placeholder,type}) => 
-<div>
-  <Label>{label}</Label>
-  <Input {...input} type={type} placeholder={placeholder} />
-</div>
+let TaskForm = ({handleSubmit,addTask}) => 
+  <form onSubmit={handleSubmit(addTask)}>
+Taskform  receives variables, and unpacks them to local variables
