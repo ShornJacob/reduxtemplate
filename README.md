@@ -19,3 +19,9 @@ the tasks object in state is mapped to the component
 
 src/components/TaskForm.js
 A redux-form
+
+const renderInput = ({input,meta,label,placeholder,type}) => 
+<div>
+  <Label>{label}</Label>
+  <Input {...input} type={type} placeholder={placeholder} />
+</div>
